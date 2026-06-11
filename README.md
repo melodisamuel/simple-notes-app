@@ -2,7 +2,7 @@
 
 A secure, scalable notes application built with **AWS Lambda**, **DynamoDB**, and **Cloudflare Access** for authentication. This project demonstrates a clean, efficient fullstack system using serverless architecture.
 
-## 🎯 Features
+## Features
 
 - **Secure Authentication**: Cloudflare Access integration for user authentication
 - **CRUD Operations**: Create, Read, Update, and Delete notes
@@ -11,7 +11,7 @@ A secure, scalable notes application built with **AWS Lambda**, **DynamoDB**, an
 - **Serverless Architecture**: Fully managed AWS services with pay-per-request billing
 - **Scalable Database**: DynamoDB with optimized single-table design
 
-## 🏗️ Architecture
+## Architecture
 
 ### Backend Stack
 - **API Gateway**: HTTP API for REST endpoints
@@ -36,7 +36,7 @@ DELETE /notes/{noteId}           - Delete a note
 GET    /notes/search/{query}     - Search notes by keyword
 ```
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Node.js 20.x or later
 - React/Vite development environment
@@ -48,7 +48,7 @@ GET    /notes/search/{query}     - Search notes by keyword
 npm install -g aws-cdk
 ```
 
-## 🚀 Setup & Deployment
+##  Setup & Deployment
 
 ### 1. Clone and Install Dependencies
 
@@ -109,7 +109,7 @@ In production, you'll need to:
 
 For local testing, you can use the `x-authenticated-user-email` header instead.
 
-## 💡 Design Decisions & Trade-offs
+## Design Decisions & Trade-offs
 
 ### 1. **Single Table Design**
 - **Decision**: One DynamoDB table with composite keys
@@ -141,7 +141,7 @@ For local testing, you can use the `x-authenticated-user-email` header instead.
 - **Rationale**: Distributed generation without central coordination
 - **Trade-off**: Slightly longer IDs than UUIDs, but collision-resistant and sortable
 
-## 🧪 Local Testing
+## Local Testing
 
 ### Using Postman or cURL
 
@@ -175,7 +175,7 @@ curl -X DELETE https://{API_ENDPOINT}/notes/{noteId} \
   -H "x-authenticated-user-email: user@example.com"
 ```
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 Notes App/
@@ -200,7 +200,7 @@ Notes App/
 └── README.md
 ```
 
-## 🔐 Security Considerations
+## Security Considerations
 
 - **Authentication**: Cloudflare Access ensures only authenticated users can call the API
 - **Authorization**: Each Lambda function verifies the user email from the header
@@ -208,27 +208,15 @@ Notes App/
 - **CORS**: Configured to allow requests from any origin (can be restricted in production)
 - **Environment Variables**: Sensitive data (table names) are passed via environment variables
 
-## 🎁 Bonus Features Implemented
+##  Bonus Features Implemented
 
 1. **Search Endpoint**: `/notes/search/{query}` - Filter notes by keyword
 2. **Normalized Search**: Case-insensitive search for better UX
 3. **Detailed Timestamps**: Track `CreatedAt` and `UpdatedAt` for each note
 4. **Error Handling**: Comprehensive error messages with appropriate HTTP status codes
 
-## 📈 Future Improvements
 
-- [ ] Implement full-text search with ElasticSearch
-- [ ] Add pagination for list and search endpoints
-- [ ] Add tags/categories for notes
-- [ ] Add sharing functionality for collaborative notes
-- [ ] Implement soft deletes with recovery
-- [ ] Add CloudWatch logging and monitoring
-- [ ] Implement rate limiting
-- [ ] Add note versioning/history
-- [ ] Deploy frontend with React/Vue
-- [ ] Add CI/CD pipeline with GitHub Actions
-
-## 🧹 Cleanup
+##  Cleanup
 
 To delete all AWS resources:
 
