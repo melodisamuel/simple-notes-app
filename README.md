@@ -224,11 +224,5 @@ To delete all AWS resources:
 npx cdk destroy
 ```
 
-## 📝 License
 
-MIT License - Feel free to use this for learning and development
-
----
-
-**Built with ❤️ for serverless applications**
 
